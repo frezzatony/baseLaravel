@@ -1,0 +1,41 @@
+@extends('layouts.system.' . Request::get('_layout'))
+@section('content')
+    <div class="card crud-attendanceunits">
+        <div class="card-header d-flex p-1">
+            <h5 class="fs-sm mb-0 px-1">
+                <i class="ph-keyboard"></i> Unidades de Atendimento
+            </h5>
+        </div>
+        <div class="card-body p-0 m-0 bg-silver">
+            @include('system.attendanceunits.components.main_menu')
+            <textarea class="filters-template d-none">
+                <?= json_encode($dynamic_filters) ?>
+            </textarea>
+            <textarea class="filters-default-values d-none">
+                <?= json_encode($default_filters) ?>
+            </textarea>
+            @include('layouts.common.crud.search_box')
+            @include('system.attendanceunits.components.datatable')
+
+        </div>
+    </div>
+@endsection
+
+@include('layouts.common.crud.js_files')
+
+@section('css-files')
+    <link href="{{ asset('assets/js/vendor/editors/summernote/summernote-bs4.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/js/vendor/jquery.inputpicker/jquery.inputpicker.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/js/vendor/files/file-manager.css') }}" rel="stylesheet" type="text/css">
+@endsection
+
+@section('js-files')
+    <script type="text/javascript" src="{{ asset('assets/js/vendor/jquery-appendgrid/AppendGrid.js') }}?v={{ time() }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/vendor/jquery.inputpicker/jquery.inputpicker.js') }}?v={{ time() }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/vendor/editors/summernote/summernote-bs4.min.js') }}?v={{ time() }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/vendor/editors/summernote/lang/summernote-pt-BR.min.js') }}?v={{ time() }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/vendor/tables/gridjs/gridjs.min.js') }}?v={{ time() }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/vendor/uploaders/dropzone.min.js') }}?v={{ time() }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/vendor/files/file-manager.js') }}?v={{ time() }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/custom/system/attendanceunits/index.js') }}?v={{ time() }}"></script>
+@endsection

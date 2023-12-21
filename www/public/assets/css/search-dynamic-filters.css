@@ -1,0 +1,55 @@
+.query-builder .rules-group-container {
+  padding: 0;
+  margin: 0;
+  background-color: #FFF;
+  border: none;
+}
+
+.query-builder .rules-group-header {
+  display: none;
+}
+
+.query-builder .rules-list {
+  padding: 0;
+}
+
+.query-builder .rule-container {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.query-builder .rules-list>*::before,
+.query-builder .rules-list>*::after {
+  border: none;
+}
+
+.query-builder .rule-value-container {
+  border: none;
+}
+
+
+.btn-remove-rule {
+  font-size: 0.8em;
+  border: solid 1px #d9e3e9 !important;
+  padding: 0 4px;
+  margin-top: 2px;
+}
+
+
+.query-builder .rules-group-container,
+.query-builder .rule-value-container {
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+}
+
+.query-builder .rules-list {
+  padding: 0 !important;
+}
+
+.query-builder .rules-group-container,
+.query-builder .rule-container,
+.query-builder .rule-placeholder {
+  border: none !important;
+}

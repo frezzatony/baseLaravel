@@ -1,0 +1,51 @@
+version: "3"
+services:
+  postgres_civis:
+    container_name: civis-postgres
+    build:
+      dockerfile: 'civis_postgres.Dockerfile'
+    working_dir: /
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER:-udb_civis}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-LEet:mscC&BA)ks}}"
+      POSTGRES_DB: "${POSTGRES_DB:-civis}"
+    volumes:
+      - .:/db
+      - ./db/postgres-data:/var/lib/postgresql/data
+      - ./dumps:/home
+      - ./civis-postgres/etc/supervisor.d:/etc/supervisor.d/
+      - ./civis-postgres/periodic:/etc/periodic/
+    networks:
+      civis:
+        ipv4_address: 172.100.0.3
+        aliases:
+          - postgres-civis
+    ports:
+      - 5435:5432
+    restart: always
+
+  civis:
+      build:
+        dockerfile: 'civis_laravel.Dockerfile'
+      container_name: civis
+      ports:
+        - 8888:80
+        - 8889:8080
+      volumes:
+        - ../www/:/var/www
+        - ./apache2/sites-available/:/etc/apache2/sites-available/
+        - ./sistema/etc/supervisor:/etc/supervisor
+      networks:
+        civis:
+          ipv4_address: 172.100.0.2
+          aliases:
+            - laravel-civis
+      restart: always
+
+networks:
+  civis:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.100.0.0/24
+         gateway: 172.100.0.1

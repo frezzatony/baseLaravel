@@ -1,0 +1,40 @@
+.filemanager .filemanager-files-list table {
+  width: 100%;
+}
+
+.filemanager .filemanager-files-list table td {
+  cursor: default;
+  position: relative;
+  height: 20px;
+  padding: 3px 0 3px 0;
+}
+
+.filemanager .filemanager-files-list table td img {
+  height: 18px;
+  max-width: 18px;
+  margin-right: 4px;
+}
+
+.filemanager .filemanager-files-list table td span {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.filemanager table.dataTable td {
+  padding-top: 0.5em;
+  height: 2.5em;
+}
+
+.filemanager .dataTables_scrollHeadInner,
+.filemanager .dataTables_scrollHeadInner table {
+  min-width: 100% !important;
+}
+
+.filemanager-modal-preview {
+  z-index: 2147483;
+}

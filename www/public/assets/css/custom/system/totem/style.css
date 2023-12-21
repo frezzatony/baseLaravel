@@ -1,0 +1,62 @@
+.page-content::before {
+  background-image: url("../../../../images/backgrounds/gradient01.jpg");
+  background-size: cover;
+  opacity: 0.3;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.content-wrapper::before {
+  background-image: url("../../../../images/brasao.png");
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  filter: grayscale(100%);
+  opacity: 0.05;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+#contents,
+.screen {
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.btn {
+  border: 1px solid #333;
+}
+
+.btn-labeled-start {
+  padding-left: 28pt !important;
+}
+
+.btn-labeled-end {
+  padding-right: 28pt !important;
+}
+
+.screen-4-buttons .header {
+  margin-top: 6vh;
+  margin-bottom: 6vh;
+}
+
+.screen-4-buttons .btn-screen {
+  margin-bottom: 16vh;
+  height: 140px;
+}
+
+.screen-4-buttons .previous {
+  position: absolute;
+  bottom: 10vh;
+  left: 0;
+}
